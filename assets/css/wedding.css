@@ -1,0 +1,18 @@
+/* =====================================================================
+   wedding.css
+   Page-specific styles for wedding.php ONLY. The hero banner
+   (.ann-hero), the intro banner (.wed-banner), and the whole "sacrament
+   landing page kit" (quick-links, overview row, 3-step process,
+   about+quote) all moved to style.css once baptism.php needed the
+   identical shape -- see style.css's "Sacrament landing page kit"
+   section. All that's left here is the one button variant unique to
+   this page and a couple of wedding-only responsive tweaks.
+   ===================================================================== */
+
+.wed-start-btn { flex-shrink: 0; white-space: nowrap; }
+
+@media (max-width: 800px) {
+    .wed-banner { flex-direction: column; align-items: flex-start; text-align: left; }
+    .wed-banner-art { width: 90px; }
+    .wed-start-btn { width: 100%; justify-content: center; }
+}

@@ -1,0 +1,6 @@
+# Real SMTP credentials -- see includes/mail-config.example.php for the template.
+includes/mail-config.php
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
