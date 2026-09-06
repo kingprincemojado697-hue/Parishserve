@@ -138,7 +138,6 @@ require __DIR__ . '/includes/admin-sidebar.php';
                             data-reference="<?php echo htmlspecialchars($r['ref']); ?>"
                             data-name="<?php echo htmlspecialchars($r['name']); ?>"
                             data-status="<?php echo htmlspecialchars($r['status']); ?>"
-                            data-seminar="<?php echo htmlspecialchars($r['seminar'] ?? ''); ?>"
                             <?php if ($docItems): ?>data-docs='<?php echo htmlspecialchars(json_encode($docItems), ENT_QUOTES); ?>'<?php endif; ?>>
                             Update
                         </button>
@@ -164,15 +163,10 @@ require __DIR__ . '/includes/admin-sidebar.php';
                 <small class="admin-doc-hint">Tracks what's been received -- final verification still happens on-site.</small>
             </div>
             <div class="ps-modal-field" data-modal-seminar-wrap hidden>
-                <label for="modalSeminar">Pre-Cana Seminar Schedule</label>
-                <span class="ps-select">
-                    <select id="modalSeminar" name="seminar_schedule" data-modal-field="seminar">
-                        <option value="">Not yet scheduled</option>
-                        <option value="1st">1st Saturday of the month</option>
-                        <option value="3rd">3rd Saturday of the month</option>
-                    </select>
-                </span>
-                <small class="admin-doc-hint">All documents are in -- the couple can now be booked into a seminar batch.</small>
+                <div class="ps-info-banner is-tip">
+                    <?php ps_icon('info'); ?>
+                    <span>All documents are in. Once you approve this request, the bride and groom will be notified to choose their own Pre-Cana Seminar date (1st or 3rd Saturday) -- that choice is theirs, not made here.</span>
+                </div>
             </div>
             <div class="ps-modal-field">
                 <label for="modalStatus">Status</label>
@@ -183,10 +177,6 @@ require __DIR__ . '/includes/admin-sidebar.php';
                         <?php endforeach; ?>
                     </select>
                 </span>
-            </div>
-            <div class="ps-modal-field">
-                <label for="modalRemarks">Remarks</label>
-                <textarea id="modalRemarks" name="remarks" rows="3" placeholder="Optional note, visible internally only"></textarea>
             </div>
             <div class="ps-modal-actions">
                 <button type="button" class="ps-btn ps-btn-outline" data-modal-close>Cancel</button>
